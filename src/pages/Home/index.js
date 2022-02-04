@@ -5,6 +5,7 @@ import { FiLink } from 'react-icons/fi'
 import Menu from '../../components/Menu';
 import LinkModal from '../../components/LinkModal';
 import apiBitly from '../../services/api';
+import { saveLink, getLinkSave } from '../../services/storeLinks';
 
 const Home = () => {
 
@@ -20,6 +21,7 @@ const Home = () => {
       console.log(data);
       setData(data);
       setShowModal(true);
+      saveLink('@encurtaLink', data);
       setLink('');
 
     } catch {
